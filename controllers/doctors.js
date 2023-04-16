@@ -37,7 +37,7 @@ router.post('/login',async (req,res)=>{
        res.status(200).json({
             message: 'Sign in successful, here is your token, please keep it safe!',
             data:  {
-                 token:jwt.sign(doc.toJSON(),'akashion', { expiresIn:"1000000"} )
+                 token:jwt.sign(doc.toJSON(),'akashion', { expiresIn:"24"} )
             }
         })
      }catch(err){
