@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const Doctors=require('../models/doctors');
-const passport = require('passport');
+
 const jwt=require('jsonwebtoken');
 
 router.post('/register',async (req,res)=>{
@@ -37,7 +37,7 @@ router.post('/login',async (req,res)=>{
        res.status(200).json({
             message: 'Sign in successful, here is your token, please keep it safe!',
             data:  {
-                 token:jwt.sign(doc.toJSON(),'akashion', { expiresIn:"24h"} )
+                 token:jwt.sign(doc.toJSON(),'akashion', { expiresIn:"1000000"} )
             }
         })
      }catch(err){

@@ -81,9 +81,7 @@ router.post('/:id/create_report',async (req,res)=>{
         message:"Internal Server Error"
     })
     }
-     res.status(200).json({
-        message:"report has created"
-     })
+   
 })
 
 
