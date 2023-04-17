@@ -27,7 +27,7 @@ router.get('/:id/all_report',async (req,res)=>{
 router.post('/register',async (req,res)=>{
     try{
         const doc=await Patient.findOne({mobile:req.body.mobile});
-      
+         
     if(doc){
         res.status(401).json({
             message:`Patients is register already Patient name is:-${doc.name}`

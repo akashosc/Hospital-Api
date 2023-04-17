@@ -19,10 +19,15 @@ mongoose.connect(process.env.mongoUrl,{useNewUrlParser:true}).then(()=>console.l
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-// passport auth
+// EJS plugin
+app.set('view engine',"ejs");
+//EJS plugin 
 
-// passport auth
 
+
+app.get('/',(req,res)=>{
+  res.render('HospitalapiDocu');
+})
 
 app.use('/doctors',doctorsController);
 app.use('/patients',passport.authenticate('jwt', {session: false}),patientsController);
