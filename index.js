@@ -7,7 +7,7 @@ const doctorsController=require('./controllers/doctors');
 const patientsController=require('./controllers/patients');
 const reportsController=require('./controllers/reports');
 const passport=require('passport');
-
+const path =require('path');
 const passportJwt=require('./config/passport-jwt');
 const session=require('express-session');
 // Mongoose connection
@@ -20,6 +20,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 // EJS plugin
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine',"ejs");
 //EJS plugin 
 
